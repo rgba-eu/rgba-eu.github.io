@@ -1,203 +1,250 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <title>Legends Trail</title>
-        <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-        <style type="text/css">
-            @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
-            @import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Crete+Round|Galada');
-            html,body,div,section,ul,li,a,p,article,aside,header,footer,input,button,h1,h2,h3,blockquote,cite,fieldset {
-                margin: 0;
-                padding: 0;
-                border: 0 none;
-            }
-            body {
-                background-color: #3A4F61;
-                color: #3A4F61;
-                font: normal 16px/1.6 'Open Sans';
-            }
-            header {
-                background-color: rgba(195, 211, 234, 0.70);
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                z-index: 10;
-            }
 
-            header ul {
-                position: absolute;
-                right: 0;
-                top: 12px;
-                list-style: none;
-            }
-            header li {
-                display: inline-block;
-            }
-            header a,
-            button {
-                color: #3A4F61;
-/*                font-family: 'Galada'*/
-                font-family: 'Crete Round';
-                text-decoration: none;
-                padding: 10px;
-                font-size: 18px;
-            }
-            header .cta,
-            button {
-                background-color: #f26c4f;
-                border-radius: 5px;
-                color: #FFF;
-            }
-            header > div,
-            section > div,
-            footer > div {
-                width: 1180px;
-                margin: 0 auto;
-                position: relative;
-            }
-            h1,
-            legend{
-                font-family: 'Berkshire Swash';
-                font-style: italic;
-
-            }
-/*
+<head>
+    <title>Legends Trail</title>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <style type="text/css">
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+        @import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Crete+Round|Galada');
+        html,
+        body,
+        div,
+        section,
+        ul,
+        li,
+        a,
+        p,
+        article,
+        aside,
+        header,
+        footer,
+        input,
+        button,
+        h1,
+        h2,
+        h3,
+        blockquote,
+        cite,
+        fieldset {
+            margin: 0;
+            padding: 0;
+            border: 0 none;
+        }
+        
+        body {
+            background-color: #3A4F61;
+            color: #3A4F61;
+            font: normal 16px/1.6 'Open Sans';
+        }
+        
+        header {
+            background-color: rgba(195, 211, 234, 0.70);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            z-index: 10;
+        }
+        
+        header ul {
+            position: absolute;
+            right: 0;
+            top: 12px;
+            list-style: none;
+        }
+        
+        header li {
+            display: inline-block;
+        }
+        
+        header a,
+        button {
+            color: #3A4F61;
+            /*                font-family: 'Galada'*/
+            font-family: 'Crete Round';
+            text-decoration: none;
+            padding: 10px;
+            font-size: 18px;
+        }
+        
+        header .cta,
+        button {
+            background-color: #f26c4f;
+            border-radius: 5px;
+            color: #FFF;
+        }
+        
+        header > div,
+        section > div,
+        footer > div {
+            width: 1180px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        h1,
+        legend {
+            font-family: 'Berkshire Swash';
+            font-style: italic;
+        }
+        /*
             h1 {
                 font-family: 'Crete Round';
             }
 */
-            #hero {
-                background: transparent url(castle.jpg) center center no-repeat;
-                background-size: cover;
-                color: #FFF;
-            }
-            #hero div {
-                display: flex;
-                flex-wrap: wrap;
-                width: 1200px;
-                padding: 360px 0 30px;
-            }
-            #hero h1 {
-                width: 100%;
-                margin-left: 10px;
-                font-size: 40px;
-                text-shadow: 2px 2px #3A4F61;
-            }
-            #hero p {
-                width: 50%;
-                padding: 10px;
-                box-sizing: border-box;
-                font-size: 20px;
-                font-weight: 300;
-                text-shadow: 1px 1px #3A4F61;
-            }
-            #booking > div {
-                padding: 30px 0;
-            }
-            #booking > div  aside,
-            #booking > div  fieldset {
-                width: 48%;
-                display: inline-block;
-                vertical-align: top
-            }
-            #booking h1 {
-                color: #FFF;
-                padding: 0 0 20px;
-            }
-            #booking aside p {
-                color: #FFF;
-                font: normal 20px/1 'Crete Round';
-                padding: 0 0 12px
-            }
-
-            #booking aside ul {
-                margin: 0;
-                padding: 0;
-                list-style: none;
-            }
-            #booking aside li {
-                padding: 8px 0 0 22px;
-                position: relative;
-                color: #FFF;
-                list-style: none;
-                font-weight: 300;
-            }
-            #booking aside li:before {
-                position: absolute;
-                top: 17px;
-                lefT: 0;
-                width: 8px;
-                height: 8px;
-                background-color: #c3d3ea;
-                border-radius: 50%;
-                content: '';
-            }
-            legend {
-                display: block;
-                font-size: 30px;
-                text-shadow: 2px 2px #1d272f;
-                color: #FFF;
-            }
-            fieldset li {
-            padding: 10px 0;
-            }
-            fieldset button {
-                width: 220px;
-                text-align: center;
-            }
-            input {
-                width: 180px
-            }
-            label {
-                display: block;
-                color: #FFF;
-                font: normal 16px/1 'Crete Round';
-            }
-            input, select {
-                border-radius: 5px;
-                border: 1px solid #1d272f;
-                font: normal 16px/1 'Crete Round';
-                color: #1d272f;
-                padding: 12px 20px;
-            }
-            body > footer {
-                background-color: #1d272f;
-                color: #F3FCFA;
-            }
-            body > footer div {
-                padding: 30px 0 60px
-            }
-            body > footer p {
-                font-weight: 200;
-            }
-            #testimonials {
-                background-color: #c3d3ea;
-                padding: 30px 0;
-            }
-            #testimonials div > h1 {
+        
+        #hero {
+            background: transparent url(castle.jpg) center center no-repeat;
+            background-size: cover;
+            color: #FFF;
+        }
+        
+        #hero div {
+            display: flex;
+            flex-wrap: wrap;
+            width: 1200px;
+            padding: 360px 0 30px;
+        }
+        
+        #hero h1 {
+            width: 100%;
+            margin-left: 10px;
+            font-size: 40px;
+            text-shadow: 2px 2px #3A4F61;
+        }
+        
+        #hero p {
+            width: 50%;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 20px;
+            font-weight: 300;
+            text-shadow: 1px 1px #3A4F61;
+        }
+        
+        #booking > div {
+            padding: 30px 0;
+        }
+        
+        #booking > div aside,
+        #booking > div fieldset {
+            width: 48%;
+            display: inline-block;
+            vertical-align: top
+        }
+        
+        #booking h1 {
+            color: #FFF;
+            padding: 0 0 20px;
+        }
+        
+        #booking aside p {
+            color: #FFF;
+            font: normal 20px/1 'Crete Round';
+            padding: 0 0 12px
+        }
+        
+        #booking aside ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        #booking aside li {
+            padding: 8px 0 0 22px;
+            position: relative;
+            color: #FFF;
+            list-style: none;
+            font-weight: 300;
+        }
+        
+        #booking aside li:before {
+            position: absolute;
+            top: 17px;
+            lefT: 0;
+            width: 8px;
+            height: 8px;
+            background-color: #c3d3ea;
+            border-radius: 50%;
+            content: '';
+        }
+        
+        legend {
+            display: block;
             font-size: 30px;
-
-
-            }
-            #testimonials ul {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                list-style: none
-            }
-            #testimonials li {
-                width: 50%;
-                box-sizing: border-box;
+            text-shadow: 2px 2px #1d272f;
+            color: #FFF;
+        }
+        
+        fieldset li {
+            padding: 10px 0;
+        }
+        
+        fieldset button {
+            width: 220px;
+            text-align: center;
+        }
+        
+        input {
+            width: 180px
+        }
+        
+        label {
+            display: block;
+            color: #FFF;
+            font: normal 16px/1 'Crete Round';
+        }
+        
+        input,
+        select {
+            border-radius: 5px;
+            border: 1px solid #1d272f;
+            font: normal 16px/1 'Crete Round';
+            color: #1d272f;
+            padding: 12px 20px;
+        }
+        
+        body > footer {
+            background-color: #1d272f;
+            color: #F3FCFA;
+        }
+        
+        body > footer div {
+            padding: 30px 0 60px
+        }
+        
+        body > footer p {
+            font-weight: 200;
+        }
+        
+        #testimonials {
+            background-color: #c3d3ea;
+            padding: 30px 0;
+        }
+        
+        #testimonials div > h1 {
+            font-size: 30px;
+        }
+        
+        #testimonials ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            list-style: none
+        }
+        
+        #testimonials li {
+            width: 50%;
+            box-sizing: border-box;
             padding: 20px;
-            }
-            #testimonials q {
-                font-size: 18px;
-                font-weight: 300;
-
-            }
-
-/*
+        }
+        
+        #testimonials q {
+            font-size: 18px;
+            font-weight: 300;
+        }
+        /*
             #testimonials q:before {
                 content: open-quote;
                 font-size: 40px;
@@ -207,246 +254,306 @@
                 content: no-close-quote
             }
 */
-            #testimonials cite {
-                font-size: 18px;
-                font-family: 'Crete Round';
-                display: block;
-                text-align: right;
-                padding-right: 20px;
-            }
-            #map {
-                background: #8DB7E7 url(map2.png) center center no-repeat;
-                background-size: cover;
-                min-height: 517px;
-            }
-            #map article {
-                width: 500px;
-                height: 500px;
-                overflow: hidden;
-                background-color: #FFF;
-                display: none;
-                position: absolute;
-                top: 20px;
-                right: 0;
-            }
-            #map input:checked + label + article {
-                display: block;
-            }
-            #map input {
-                position: absolute;
-                z-index: -100;
-            }
+        
+        #testimonials cite {
+            font-size: 18px;
+            font-family: 'Crete Round';
+            display: block;
+            text-align: right;
+            padding-right: 20px;
+        }
+        
+        #map {
+            background: #8DB7E7 url(map2.png) center center no-repeat;
+            background-size: cover;
+            min-height: 517px;
+            position: relative;
+            z-index: 0;
+        }
+        
+        #map > div {}
+        
+        #video {
+            position: fixed;
+            opacity: 0;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.8);
+            transition: all 0.2s linear;
+        }
+        .video-open #video {
+            opacity: 1;
+            z-index: 100;
+        }
+        #video iframe {
+            width: 1260px;
+            height: 517px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -630px;
+            margin-top: -259px;
+        }
+        
+        #map article {
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+            background-color: #FFF;
+            display: none;
+            position: absolute;
+            top: 20px;
+            right: 0;
+        }
+        
+        #map input:checked + label + article {
+            display: block;
+        }
+        
+        #map input {
+            position: absolute;
+            z-index: -100;
+        }
+        
+        #map input + label {
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: #3A4F61;
+            cursor: pointer;
+            position: absolute;
+            font: normal 30px/35px 'Berkshire Swash';
+            color: #FFF;
+            text-align: center;
+            transition: all 0.2s linear;
+        }
+        
+        #map input + label:after {
+            width: 0;
+            height: 0;
+            border: 12px solid red;
+            border-width: 19px 6px 0;
+            border-color: #3A4F61 transparent transparent;
+            content: '';
+            position: absolute;
+            top: 36px;
+            left: 13px;
+            transition: all 0.2s linear;
+        }
+        
+        #map input:checked + label {
+            background-color: #f26c4f;
+        }
+        
+        #map input:checked + label:after {
+            border-color: #f26c4f transparent transparent;
+        }
+        
+        #map ul li:nth-of-type(1) label {
+            top: 380px;
+            left: 300px;
+        }
+        
+        #map ul li:nth-of-type(2) label {
+            top: 240px;
+            left: 540px;
+        }
+        
+        #map ul li:nth-of-type(3) label {
+            top: 280px;
+            left: 440px;
+        }
+        
+        #map ul li:nth-of-type(4) label {
+            top: 96px;
+            left: -200px;
+        }
+        
+        #map input:checked + label {}
+        
+        #map img {
+            display: block;
+            width: 100%;
+        }
+        
+        #map ul {
+            list-style: none;
+        }
+    </style>
+</head>
 
-            #map input + label {
-                width: 40px;
-                height: 40px;
-                border-radius: 20px;
-                background-color: #f58c75;
-                cursor: pointer;
-                position: absolute;
-                font: normal 30px/35px 'Berkshire Swash';
-                color: #FFF;
-                text-align: center;
-
-            }
-            #map input + label:after {
-                width: 0;
-                height: 0;
-                border: 12px solid red;
-                border-width: 19px 6px 0;
-                border-color: #f58c75 transparent transparent;
-                content: '';
-                position: absolute;
-                top: 36px;
-                left: 13px;
-
-            }
-            #map input:checked + label {
-                background-color: #f26c4f;
-            }
-            #map input:checked + label:after {
-                border-color: #f26c4f transparent transparent;
-            }
-
-            #map ul li:nth-of-type(1) label {
-                top: 150px;
-                left: 20px;
-            }
-            #map ul li:nth-of-type(2) label {
-                top: 150px;
-                left: 200px;
-            }
-            #map ul li:nth-of-type(3) label {
-                top: 330px;
-                left: 400px;
-            }
-            #map input:checked + label {
-
-            }
-            #map img {
-                display: block;
-                width: 100%;
-
-            }
-            #map ul {
-                list-style: none;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <div>
-                <h1>Legends Trails</h1>
-                <nav>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Trails</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#" class="cta">Book now</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <main>
-            <section id="hero">
-                <div>
-                    <h1>North Wales Legends</h1>
-                    <p>The best outdoor adventure activities in the world. Brilliant beaches. Thrilling mountain scenery. Fascinating ancient culture and heritage wherever you turn. North Wales has all this in abundance.</p>
-                    <p>Let us be your guide and help you discover why North Wales is the only place in Britain to make it onto the Lonely Planet's Best in Travel 2017, we'll help you choose where to stay, eat, and explore.</p>
-                </div>
-            </section>
-            <section id="map">
-<!--
-                Ruthin Castle Hotel
-                Soughton Hotel
-                Bodysgallen Hall Hotel
-                The Quay Hotel &amp; Spa
---><div>
+<body>
+    <header>
+        <div>
+            <h1>Legends Trails</h1>
+            <nav>
                 <ul>
-                    <li><input type="radio" name="leg" id="one"  /><label for="one">1</label>
-                <article>
-                    <img src="ruthin.jpg" />
-                    <h1>Day one</h1>
-                    <h2>Ruthin Castle</h2>
-                    <p>Laboris amet anim voluptate multos, anim iis do dolor laborum. Quid eu eiusmod
-                        ubi aliqua, qui ullamco ne tempor, cernantur aute varias ad dolore, ut magna quo
-                        illum. Amet mandaremus sed eram quid qui id ingeniis ad excepteur, dolor commodo
-                        offendit, ab senserit coniunctione. Fore iudicem eruditionem, fabulas
-                        adipisicing est incididunt non aliquip eu sint ingeniis in arbitror malis
-                        ingeniis incididunt. Occaecat velit sed arbitror sempiternum, dolore litteris
-                        aut mandaremus. Possumus nulla ubi doctrina consectetur, sint eiusmod est noster
-                        nisi, si eram tamen legam aliquip, labore consequat o summis duis. Consequat te
-                        dolor expetendis, qui eu efflorescere.
-                    </p>
-                </article>
-                    </li>
-                    <li><input type="radio" name="leg"  id="three" /><label for="three">2</label>
-                <article>
-                    <img src="library.jpg" />
-                    <h1>Day two</h1>
-                    <h2>Gladstone Library</h2>
-                    <p>Laboris amet anim voluptate multos, anim iis do dolor laborum. Quid eu eiusmod
-                        ubi aliqua, qui ullamco ne tempor, cernantur aute varias ad dolore, ut magna quo
-                        illum. Amet mandaremus sed eram quid qui id ingeniis ad excepteur, dolor commodo
-                        offendit, ab senserit coniunctione. Fore iudicem eruditionem, fabulas
-                        adipisicing est incididunt non aliquip eu sint ingeniis in arbitror malis
-                        ingeniis incididunt. Occaecat velit sed arbitror sempiternum, dolore litteris
-                        aut mandaremus. Possumus nulla ubi doctrina consectetur, sint eiusmod est noster
-                        nisi, si eram tamen legam aliquip, labore consequat o summis duis. Consequat te
-                        dolor expetendis, qui eu efflorescere.
-                    </p>
-                </article>
-                    </li>
-                <!--
-                <article>
-                    <img src="trefnant.jpg" />
-                    <h1>Trefnant</h1>
-                    <h2>?</h2>
-                    <p>Laboris amet anim voluptate multos, anim iis do dolor laborum. Quid eu eiusmod
-                        ubi aliqua, qui ullamco ne tempor, cernantur aute varias ad dolore, ut magna quo
-                        illum. Amet mandaremus sed eram quid qui id ingeniis ad excepteur, dolor commodo
-                        offendit, ab senserit coniunctione. Fore iudicem eruditionem, fabulas
-                        adipisicing est incididunt non aliquip eu sint ingeniis in arbitror malis
-                        ingeniis incididunt. Occaecat velit sed arbitror sempiternum, dolore litteris
-                        aut mandaremus. Possumus nulla ubi doctrina consectetur, sint eiusmod est noster
-                        nisi, si eram tamen legam aliquip, labore consequat o summis duis. Consequat te
-                        dolor expetendis, qui eu efflorescere.
-                    </p>
-                </article>
-
-                -->
-                        <li><input type="radio" name="leg"  id="four" /><label for="four">3</label>
-                <article>
-                    <img src="Pentrehobyn.jpg" />
-                    <h1>Day three</h1>
-                    <h2>Daniel Owen Centre</h2>
-<!--                    <h2>Pentre Hobyn</h2>-->
-                    <p>Laboris amet anim voluptate multos, anim iis do dolor laborum. Quid eu eiusmod
-                        ubi aliqua, qui ullamco ne tempor, cernantur aute varias ad dolore, ut magna quo
-                        illum. Amet mandaremus sed eram quid qui id ingeniis ad excepteur, dolor commodo
-                        offendit, ab senserit coniunctione. Fore iudicem eruditionem, fabulas
-                        adipisicing est incididunt non aliquip eu sint ingeniis in arbitror malis
-                        ingeniis incididunt. Occaecat velit sed arbitror sempiternum, dolore litteris
-                        aut mandaremus. Possumus nulla ubi doctrina consectetur, sint eiusmod est noster
-                        nisi, si eram tamen legam aliquip, labore consequat o summis duis. Consequat te
-                        dolor expetendis, qui eu efflorescere.
-                    </p>
-                        </article></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Trails</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#" class="cta">Book now</a></li>
                 </ul>
-                <aside id="video">
-                    <iframe width="1260" height="517" src="https://www.youtube.com/embed/DXeWX1J7CbY?autoplay=0&showinfo=0&controls=1&loop=0" frameborder="0" allowfullscreen></iframe>
-                </aside>
-                        </div>
-            </section>
-<!--
-            <section id="activities">
-                <div>
-                <h1>Activities</h1>
-                <p>Anim non ubi fugiat consequat ab qui duis imitarentur. Eram excepteur
-                    eruditionem, quibusdam anim nostrud. Si ea quorum varias quae. Senserit
-                    sempiternum quo mandaremus, iudicem relinqueret et singulis, aliquip quis anim
-                    offendit esse, culpa incididunt ab praesentibus. Anim appellat domesticarum a eu
-                    summis incurreret proident, noster instituendarum litteris malis singulis a iis
-                    summis o tamen, a tempor instituendarum, malis ex pariatur iis litteris fore ita
-                    pariatur transferrem quo quae appellat ad legam sint. Ex malis quis ita
-                    doctrina, ita ea tractavissent ut nam magna efflorescere si ea ex voluptatibus.</p>
-                </div>
-            </section>
--->
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="hero">
+            <div>
+                <h1>North Wales Legends</h1>
+                <p>The best outdoor adventure activities in the world. Brilliant beaches. Thrilling mountain scenery. Fascinating ancient culture and heritage wherever you turn. North Wales has all this in abundance.</p>
+                <p>Let us be your guide and help you discover why North Wales is the only place in Britain to make it onto the Lonely Planet's Best in Travel 2017, we'll help you choose where to stay, eat, and explore.</p>
+            </div>
+        </section>
+        <section id="map">
+            <!--
+                Ruthin Castle Hotel
+                Ruthin Castle is a beautiful retreat; steeped in history and nestled in acres of parkland beside the Clwydian Range in North Wales. Here you can indulge yourself with exquisite dining, unwind in our distinctive spa or revel in one of our renowned Medieval Feasts before sinking into a luxurious bed for a sleep worthy of a Prince or Princess.
 
-            <section id="booking">
-                <div>
+                Soughton Hotel
+                Soughton is a luxury hotel, wedding and event venue. On the border of Cheshire and North Wales, this stunning Georgian country house, approached down a sweeping driveway and surrounded by landscaped gardens has recently been lovingly refurbished. Contempory in feel, yet full of character, charm and warmth, the Hall boasts 14 individually decorated bedrooms, an award winning restaurant and a relaxing alternative to the hustle and bustle of city hotels.
+
+                Bodysgallen Hall Hotel
+                Bodysgallen Hall & Spa lies at the end of a winding drive in 200 acres of wooded parkland and beautiful formal walled gardens. Magnificent views encompass the sweep of the Snowdonia range of mountains and the hotel looks down on the imposing medieval castle at Conwy.
+
+                The Quay Hotel &amp; Spa
+                Set on the idyllic Conwy Estuary, the 4 star Quay Hotel and Spa commands awe-inspiring views of the most magical scenery in North Wales and is located within easy reach of Snowdonia National Park, the neighbouring medieval town of Conwy and Victorian Llandudno,
+
+-->
+            <div>
+                <ul>
+                    <li>
+                        <input type="radio" name="leg" id="one" checked />
+                        <label for="one">1</label>
+                        <article>
+                            <img src="ruthin.jpg" />
+                            <h1>Day one</h1>
+                            <ul>
+                                <li>
+                                    <h2>Ruthin Castle</h2>
+                                    <p id="video-trigger">Immerse yourself with our 360 video</p>
+                                    <p>Ruthin Castle is a beautiful retreat; steeped in history and nestled in acres of parkland beside the Clwydian Range in North Wales. Here you can indulge yourself with exquisite dining, unwind in our distinctive spa or revel in one of our renowned Medieval Feasts before sinking into a luxurious bed for a sleep worthy of a Prince or Princess.</p>
+                                </li>
+                                <li>
+                                    <h2>Dining></h2>
+                                    <p>Dining will be at the beautiful hotel restaurant <p>Dining will be at the beautiful hotel restaurant. You could be sampling fresh fare from the surrounding grounds, or contemporary takes on regional specialities. </p>
+                                </li>
+
+                            </ul>
+                        </article>
+                    </li>
+                    <li>
+                        <input type="radio" name="leg" id="two" />
+                        <label for="two">2</label>
+                        <article>
+                            <img src="library.jpg" />
+                            <h1>Day two</h1>
+                            <ul>
+                                <li>
+                                    <h2>Gladstone Library</h2>
+                                    <p>This institution pays tribute to William Gladstone. It is Britain's finest residential library, and its only Prime Ministerial library. It was founded by the great Victorian statesman himself and, following his death in 1898, became the national memorial to his life and work as well as one of the few Grade I-listed buildings in North Wales.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h2>Dining</h2>
+                                    <p>Dining will be at the beautiful hotel restaurant. You could be sampling fresh fare from the surrounding grounds, or contemporary takes on regional specialities. </p>
+                                </li>
+                                <li>
+
+                                    <h2>Soughton Hotel</h2>
+                                    <p>Soughton is a luxury hotel, wedding and event venue. On the border of Cheshire and North Wales, this stunning Georgian country house, approached down a sweeping driveway and surrounded by landscaped gardens has recently been lovingly refurbished. Contempory in feel, yet full of character, charm and warmth, the Hall boasts 14 individually decorated bedrooms, an award winning restaurant and a relaxing alternative to the hustle and bustle of city hotels.</p>
+                                </li>
+                            </ul>
+                        </article>
+                    </li>
+                    <li>
+                        <input type="radio" name="leg" id="three" />
+                        <label for="three">3</label>
+                        <article>
+                            <img src="Pentrehobyn.jpg" />
+                            <h1>Day three</h1>
+                            <ul>
+                                <li>
+                            <h2>Daniel Owen</h2>
+                            <p>Owen is the earliest Welsh-language novelist whose works are still widely read. He is credited with starting the tradition of the Welsh language. He was an influence on many later novelists, such as Kate Roberts and T. Rowland Hughes.
+                            </p></li>
+                                <li>
+                                    <h2>Dining</h2>
+                                    <p>Dining will be at the beautiful hotel restaurant. You could be sampling fresh fare from the surrounding grounds, or contemporary takes on regional specialities. </p>
+                                </li>
+                                <li>
+
+                                    <h2>Soughton Hotel</h2>
+                                    <p>Soughton is a luxury hotel, wedding and event venue. On the border of Cheshire and North Wales, this stunning Georgian country house, approached down a sweeping driveway and surrounded by landscaped gardens has recently been lovingly refurbished. Contempory in feel, yet full of character, charm and warmth, the Hall boasts 14 individually decorated bedrooms, an award winning restaurant and a relaxing alternative to the hustle and bustle of city hotels.</p>
+                                </li></ul>
+                        </article>
+                    </li>
+                    <li>
+                        <input type="radio" name="leg" id="four" />
+                        <label for="four">4</label>
+                        <article>
+                            <img src="conwy-castle.jpg" />
+                            <h1>Day three</h1>
+                            <ul>
+                                <li>
+                                    <h2>Conwy Castle</h2>
+                                    <p>Words cannot do justice to Conwy Castle. The best, simple description is found in the guidebook published by CADW, the Welsh Historic Trust, which states: "Conwy is by any standards one of the great fortresses of medieval Europe.</p>
+                                    
+                                </li>
+                                <li>
+                                    <h2>Dining</h2>
+                                    <p>Dining will be at the beautiful hotel restaurant. You could be sampling fresh fare from the surrounding grounds, or contemporary takes on regional specialities. </p>
+                                </li>
+                                <li>
+                                    <h2>The Quay Hotel &amp; Spa</h2>
+                                    <p>Set on the idyllic Conwy Estuary, the 4 star Quay Hotel and Spa commands awe-inspiring views of the most magical scenery in North Wales and is located within easy reach of Snowdonia National Park, the neighbouring medieval town of Conwy and Victorian Llandudno,</p>
+
+                                </li>
+                            </ul>
+                        </article>
+                    </li>
+
+                    
+                </ul>
+                
+            </div>
+        </section>
+
+        <section id="booking">
+            <div>
 
 
 
 
                 <fieldset>
                     <legend>Request a booking</legend>
-                     <ul>
-                         <li>
-                             <label for="dateSelect"></label>
-                             <select id="dateSelect">
-                                 <option>Please select a date</option>
-                             </select>
-                         </li>
-                         <li>
-                             <label for="titleSelect">What's your name</label>
-                             <select id="titleSelect">
-                                 <option>Mr</option>
-                             </select>
-                             <input type="text" id="firstName" placeholder="First name"  />
-                             <input type="text" id="surName" placeholder="Surname" />
-                         </li>
-                         <li>
-                             <label for="email">What's your email address</label>
-                             <input type="email" id="email" placeholder="name@domain.com" />
-                         </li>
-                         <li>
-                             <button>Submit</button>
-                         </li>
+                    <ul>
+                        <li>
+                            <label for="dateSelect"></label>
+                            <select id="dateSelect">
+                                <option>Please select a date</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="titleSelect">What's your name</label>
+                            <select id="titleSelect">
+                                <option>Mr</option>
+                            </select>
+                            <input type="text" id="firstName" placeholder="First name" />
+                            <input type="text" id="surName" placeholder="Surname" />
+                        </li>
+                        <li>
+                            <label for="email">What's your email address</label>
+                            <input type="email" id="email" placeholder="name@domain.com" />
+                        </li>
+                        <li>
+                            <button>Submit</button>
+                        </li>
                     </ul>
                 </fieldset>
-                    <aside>
+                <aside>
                     <p>All trails include:</p>
                     <ul>
                         <li>a welcome reception</li>
@@ -455,11 +562,11 @@
                         <li>All talks, guided tours and admissions </li>
                         <li>Coach transfers and tour manager throughout</li>
                     </ul>
-                    </aside>
-                </div>
-            </section>
-            <section id="testimonials">
-                <div>
+                </aside>
+            </div>
+        </section>
+        <section id="testimonials">
+            <div>
                 <h1>Testimonials</h1>
                 <ul>
                     <li>
@@ -490,33 +597,37 @@
                         <blockquote>
                             <q>Just back from the best holiday ever. Caroline was a wonderful tour organiser. Calm, friendly and superbly organised. Nothing was a trouble and any tiny difficulties where resolved with good humour and expediency. The company was excellent, and we were a very happy group, enjoying everyone's company from start to finish.</q>
                             <footer>
-                            <cite>Samantha Castle, Twickenham</cite>
+                                <cite>Samantha Castle, Twickenham</cite>
                             </footer>
                         </blockquote>
                     </li>
 
                 </ul>
-                </div>
-            </section>
-        </main>
-        <footer>
-            <div>
-            <h1>Legends Trails</h1>
-            <p>Enim an ingeniis, quid doctrina non comprehenderit est si in aute incurreret,
-                dolor hic incurreret. Ingeniis te malis, singulis sempiternum et arbitror ex
-                nisi nostrud in quid aliqua et do quem legam aut possumus. Dolore litteris an
-                despicationes, qui labore noster duis iudicem ex eu aute exercitation, veniam
-                doctrina ne cupidatat. Est tempor non quamquam ex multos nostrud sed varias
-                sunt, officia ubi consequat nam eu elit eiusmod tempor de litteris e varias ex
-                excepteur fore si deserunt efflorescere, si fore se enim, litteris non malis
-                tempor. Quibusdam reprehenderit a cupidatat. Et nam distinguantur, nostrud ne
-                probant, cupidatat dolor irure cupidatat tamen, mentitum varias voluptate
-                occaecat ut doctrina hic ingeniis non appellat id illum probant, ullamco quem
-                probant, qui fore quibusdam admodum. Eram non expetendis ubi malis, cernantur
-                illum aliquip occaecat, ut possumus philosophari, non qui instituendarum.</p>
-            <p>© 2017 Legends Tours Ltd.|Privacy Policy|Site Map|My Booking|Terms and Conditions</p>
             </div>
-        </footer>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <h1>Legends Trails</h1>
+            <p>Enim an ingeniis, quid doctrina non comprehenderit est si in aute incurreret, dolor hic incurreret. Ingeniis te malis, singulis sempiternum et arbitror ex nisi nostrud in quid aliqua et do quem legam aut possumus. Dolore litteris an despicationes, qui labore noster duis iudicem ex eu aute exercitation, veniam doctrina ne cupidatat. Est tempor non quamquam ex multos nostrud sed varias sunt, officia ubi consequat nam eu elit eiusmod tempor de litteris e varias ex excepteur fore si deserunt efflorescere, si fore se enim, litteris non malis tempor. Quibusdam reprehenderit a cupidatat. Et nam distinguantur, nostrud ne probant, cupidatat dolor irure cupidatat tamen, mentitum varias voluptate occaecat ut doctrina hic ingeniis non appellat id illum probant, ullamco quem probant, qui fore quibusdam admodum. Eram non expetendis ubi malis, cernantur illum aliquip occaecat, ut possumus philosophari, non qui instituendarum.</p>
+            <p>© 2017 Legends Tours Ltd.|Privacy Policy|Site Map|My Booking|Terms and Conditions</p>
+        </div>
+    </footer>
+<aside id="video">
+                    <iframe width="1260" height="517" src="https://www.youtube.com/embed/DXeWX1J7CbY?autoplay=0&showinfo=0&controls=1&loop=0" frameborder="0" allowfullscreen id="video-player"></iframe>
+                </aside>
+    <script type="text/javascript">
+        document.getElementById('video').addEventListener('click',function(){
+            document.body.classList.remove('video-open');
+        });
+        document.getElementById('video-trigger').addEventListener('click',function(){
+            document.body.classList.add('video-open');
+        });
+        document.getElementById('video-player').addEventListener('load',function(){
+            var myVideo =  this.getElementById('myVideo'); 
+            myVideo.mute();
+        });
+    </script>
+</body>
 
-    </body>
 </html>

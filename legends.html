@@ -352,6 +352,17 @@
             left: 13px;
             transition: all 0.2s linear;
         }
+        #map input + label:before {
+            width: 0;
+            height: 0;
+            content: 'Day';
+            position: absolute;
+            top: -22px;
+            left: -2px;
+            transition: all 0.2s linear;
+            font: italic 20px/1 'Berkshire Swash';
+            color: #3A4F61;
+        }
         
         #map input:checked + label {
             background-color: #f26c4f;
@@ -415,7 +426,7 @@
          #map article {
             width: 100vw;
             overflow: hidden;
-            background-color: rgba(255,255,255,0.7);
+            background-image: linear-gradient( rgba(255,255,255,0.5) 0%,#FFF 30% );
             display: none;
             position: absolute;
             bottom: 0;
@@ -425,6 +436,12 @@
             width: 1180px;
             margin: 0 auto;
         }
+        #map article h1 {
+            text-shadow: 2px 2px 0 #FFF;
+            font-size: 20px;
+            position: absolute;
+            top: -40px;
+        }
         #map article ul {
             display: flex;
             flex-wrap: wrap;
@@ -433,7 +450,18 @@
             width: 50%;
         }
         #map article img {
-            width: 220px;
+            height: 150px;
+            float: left;
+        }
+        #map article p {
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.5;
+            padding: 12px 20px 0 0;
+        }
+        #map article img + h2 {
+            position: absolute;
+            padding: 12px 20px;
         }
         #booking,
         #testimonials,
@@ -490,15 +518,17 @@
                         <label for="one">1</label>
                         <article>
                             <div>
-                            <img src="ruthin.jpg" />
+                            
                             <h1>Day one</h1>
                             <ul>
                                 <li>
+                                    <img src="ruthin.jpg" />
                                     <h2>Ruthin Castle</h2>
                                     <p id="video-trigger">Immerse yourself with our 360 video</p>
                                     <p>Ruthin Castle is a beautiful retreat; steeped in history and nestled in acres of parkland beside the Clwydian Range in North Wales. Here you can indulge yourself with exquisite dining, unwind in our distinctive spa or revel in one of our renowned Medieval Feasts before sinking into a luxurious bed for a sleep worthy of a Prince or Princess.</p>
                                 </li>
                                 <li>
+                                    <img src="ruthindining.jpg" />
                                     <h2>Dining</h2>
                                     <p>Dining will be at the beautiful hotel restaurant. You could be sampling fresh fare from the surrounding grounds, or contemporary takes on regional specialities. </p>
                                 </li>
@@ -512,23 +542,21 @@
                         <label for="two">2</label>
                         <article>
                             <div>
-                            <img src="library.jpg" />
+                            
                             <h1>Day two</h1>
                             <ul>
                                 <li>
+                                    <img src="library.jpg" />
                                     <h2>Gladstone Library</h2>
                                     <p>This institution pays tribute to William Gladstone. It is Britain's finest residential library, and its only Prime Ministerial library. It was founded by the great Victorian statesman himself and, following his death in 1898, became the national memorial to his life and work as well as one of the few Grade I-listed buildings in North Wales.
                                     </p>
                                 </li>
                                 <li>
-                                    <h2>Dining</h2>
+                                    <img src="soughtonfood.jpeg" />
+                                    <h2>Accomodation &amp; Dining</h2>
                                     <p>Dining will be at the beautiful hotel restaurant. You could be sampling fresh fare from the surrounding grounds, or contemporary takes on regional specialities. </p>
                                 </li>
-                                <li>
-
-                                    <h2>Soughton Hotel</h2>
-                                    <p>Soughton is a luxury hotel, wedding and event venue. On the border of Cheshire and North Wales, this stunning Georgian country house, approached down a sweeping driveway and surrounded by landscaped gardens has recently been lovingly refurbished. Contempory in feel, yet full of character, charm and warmth, the Hall boasts 14 individually decorated bedrooms, an award winning restaurant and a relaxing alternative to the hustle and bustle of city hotels.</p>
-                                </li>
+                                
                             </ul>
                             </div>
                         </article>
@@ -538,20 +566,19 @@
                         <label for="three">3</label>
                         <article>
                             <div>
-                            <img src="Pentrehobyn.jpg" />
+                            
                             <h1>Day three</h1>
                             <ul>
                                 <li>
+                                    <img src="Pentrehobyn.jpg" />
                             <h2>Daniel Owen</h2>
                             <p>Owen is the earliest Welsh-language novelist whose works are still widely read. He is credited with starting the tradition of the Welsh language. He was an influence on many later novelists, such as Kate Roberts and T. Rowland Hughes.
                             </p></li>
+                                
                                 <li>
-                                    <h2>Dining</h2>
-                                    <p>Dining will be at the beautiful hotel restaurant. You could be sampling fresh fare from the surrounding grounds, or contemporary takes on regional specialities. </p>
-                                </li>
-                                <li>
+                                    <img src="SoughtonHall.jpg" />
 
-                                    <h2>Soughton Hotel</h2>
+                                    <h2>Accomodation &amp; Dining</h2>
                                     <p>Soughton is a luxury hotel, wedding and event venue. On the border of Cheshire and North Wales, this stunning Georgian country house, approached down a sweeping driveway and surrounded by landscaped gardens has recently been lovingly refurbished. Contempory in feel, yet full of character, charm and warmth, the Hall boasts 14 individually decorated bedrooms, an award winning restaurant and a relaxing alternative to the hustle and bustle of city hotels.</p>
                                 </li></ul>
                             </div>
@@ -561,20 +588,19 @@
                         <input type="radio" name="leg" id="four" />
                         <label for="four">4</label>
                         <article><div>
-                            <img src="conwy-castle.jpg" />
+                            
                             <h1>Day three</h1>
                             <ul>
                                 <li>
+                                    <img src="conwy-castle.jpg" />
                                     <h2>Conwy Castle</h2>
                                     <p>Words cannot do justice to Conwy Castle. The best, simple description is found in the guidebook published by CADW, the Welsh Historic Trust, which states: "Conwy is by any standards one of the great fortresses of medieval Europe.</p>
                                     
                                 </li>
+                                
                                 <li>
-                                    <h2>Dining</h2>
-                                    <p>Dining will be at the beautiful hotel restaurant. You could be sampling fresh fare from the surrounding grounds, or contemporary takes on regional specialities. </p>
-                                </li>
-                                <li>
-                                    <h2>The Quay Hotel &amp; Spa</h2>
+                                    <img src="quay.jpg" />
+                                    <h2>Accomodation &amp; Dining</h2>
                                     <p>Set on the idyllic Conwy Estuary, the 4 star Quay Hotel and Spa commands awe-inspiring views of the most magical scenery in North Wales and is located within easy reach of Snowdonia National Park, the neighbouring medieval town of Conwy and Victorian Llandudno,</p>
 
                                 </li>

@@ -303,7 +303,7 @@
             overflow: hidden;
         }
         #map .map {
-            background: #8DB7E7 url(map2.png) -140px -100px no-repeat;
+            background: transparent url(map2.png) -140px -100px no-repeat;
             background-size: cover;
             min-height: 620px;
             position: absolute;
@@ -404,10 +404,24 @@
         }
         
         #video-trigger {
+/*
             color: #f26c4f;
             font-family: 'Crete Round';
             text-decoration: underline
+*/
+            position: relative;
             
+        }
+        #video-trigger:after {
+            content: '';
+            width: 62px;
+            height: 62px;
+            display: block;
+            background: transparent url(icon-360.png) center center no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: 12px;
+            right: 12px;
         }
         #map article h2 {
             color: #FFF;
@@ -465,7 +479,8 @@
         }
         #booking,
         #testimonials,
-        body > footer {
+        body > footer,
+        #map {
             background-image: url(tile.png);
             background-position: left top;
             background-repeat: repeat;
@@ -523,16 +538,17 @@
                             
                             <h1>Day one</h1>
                             <ul>
-                                <li>
+                                <li id="video-trigger">
                                     <img src="ruthin.jpg" />
                                     <h2>Ruthin Castle</h2>
-                                    <p id="video-trigger">Immerse yourself with our 360 video</p>
                                     <p>Ruthin Castle is a beautiful retreat; steeped in history and nestled in acres of parkland beside the Clwydian Range in North Wales. Here you can indulge yourself with exquisite dining, unwind in our distinctive spa or revel in one of our renowned Medieval Feasts before sinking into a luxurious bed for a sleep worthy of a Prince or Princess.</p>
                                 </li>
                                 <li>
                                     <img src="ruthindining.jpg" />
                                     <h2>Dining</h2>
+                                    
                                     <p>Ruthin Castle provides a superb stage for hosting themed medieval dinners modeled upon the legendary feasts the Earl of Warwick held at The Castle in the 16th century.</p>
+                                    <p>Revellers assemble in the Presence Chamber for the partaking of bread and salt, age-old symbols of hospitality. The fully costumed Court Steward will then escort you into the lofty Banqueting Hall where the Ladies of the Court will entertain, sing (in both Welsh and English), jest and lead the evening’s feasting&hellip;</p>
                                 </li>
 
                             </ul>

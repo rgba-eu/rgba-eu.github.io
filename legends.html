@@ -82,7 +82,9 @@
             margin: 0 auto;
             position: relative;
         }
-        
+        header h1 {
+            text-shadow: 1px 1px 0 #FFF;
+        }
         h1,
         legend {
             font-family: 'Berkshire Swash';
@@ -122,6 +124,8 @@
             font-weight: 300;
             text-shadow: 1px 1px #3A4F61;
         }
+        
+        
         
         #booking > div {
             padding: 30px 0;
@@ -263,15 +267,7 @@
             padding-right: 20px;
         }
         
-        #map {
-            background: #8DB7E7 url(map2.png) center center no-repeat;
-            background-size: cover;
-            min-height: 517px;
-            position: relative;
-            z-index: 0;
-        }
         
-        #map > div {}
         
         #video {
             position: fixed;
@@ -298,16 +294,25 @@
             margin-top: -259px;
         }
         
-        #map article {
-            width: 500px;
-            height: 500px;
+        
+        #map {
+            background-color: #8DB7E7;
+            min-height: 620px;
+            position: relative;
+            z-index: 0;
             overflow: hidden;
-            background-color: #FFF;
-            display: none;
-            position: absolute;
-            top: 20px;
-            right: 0;
         }
+        #map .map {
+            background: #8DB7E7 url(map2.png) -140px -100px no-repeat;
+            background-size: cover;
+            min-height: 620px;
+            position: absolute;
+            z-index: 0;
+            top: 0; 
+            left: 0;
+            width: 100vw
+        }
+       
         
         #map input:checked + label + article {
             display: block;
@@ -316,6 +321,8 @@
         #map input {
             position: absolute;
             z-index: -100;
+            visibility: hidden;
+            top: 300px
         }
         
         #map input + label {
@@ -329,6 +336,8 @@
             color: #FFF;
             text-align: center;
             transition: all 0.2s linear;
+            top: 50%;
+            left: 50%;
         }
         
         #map input + label:after {
@@ -353,26 +362,26 @@
         }
         
         #map ul li:nth-of-type(1) label {
-            top: 380px;
-            left: 300px;
+            margin-top: -49px;
+            margin-left: 0;
         }
         
         #map ul li:nth-of-type(2) label {
-            top: 240px;
-            left: 540px;
+            margin-top: -109px;
+            margin-left: 360px;
         }
         
         #map ul li:nth-of-type(3) label {
-            top: 280px;
-            left: 440px;
+            margin-top: -69px;
+            margin-left: 260px;
         }
         
         #map ul li:nth-of-type(4) label {
-            top: 96px;
-            left: -200px;
+            margin-top: -287px;
+            margin-left: -496px;
         }
         
-        #map input:checked + label {}
+        
         
         #map img {
             display: block;
@@ -381,6 +390,57 @@
         
         #map ul {
             list-style: none;
+        }
+        
+        #video-trigger {
+            color: #f26c4f;
+            font-family: 'Crete Round';
+            text-decoration: underline
+            
+        }
+        #map article h2 {
+            color: #FFF;
+            font-family: 'Crete Round';
+            display: block;
+            background-color: rgba(0,0,0,0.5)
+            
+        }
+        #map {
+            position: relative;
+        }
+        #map > div {
+            min-height: 620px;
+            width: 100vw;
+        }
+         #map article {
+            width: 100vw;
+            overflow: hidden;
+            background-color: rgba(255,255,255,0.7);
+            display: none;
+            position: absolute;
+            bottom: 0;
+            height: 300px;
+        }
+        #map article > div {
+            width: 1180px;
+            margin: 0 auto;
+        }
+        #map article ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #map article ul li {
+            width: 50%;
+        }
+        #map article img {
+            width: 220px;
+        }
+        #booking,
+        #testimonials,
+        body > footer {
+            background-image: url(tile.png);
+            background-position: left top;
+            background-repeat: repeat;
         }
     </style>
 </head>
@@ -422,12 +482,14 @@
                 Set on the idyllic Conwy Estuary, the 4 star Quay Hotel and Spa commands awe-inspiring views of the most magical scenery in North Wales and is located within easy reach of Snowdonia National Park, the neighbouring medieval town of Conwy and Victorian Llandudno,
 
 -->
+            <div class="map"></div>
             <div>
                 <ul>
                     <li>
                         <input type="radio" name="leg" id="one" checked />
                         <label for="one">1</label>
                         <article>
+                            <div>
                             <img src="ruthin.jpg" />
                             <h1>Day one</h1>
                             <ul>
@@ -437,17 +499,19 @@
                                     <p>Ruthin Castle is a beautiful retreat; steeped in history and nestled in acres of parkland beside the Clwydian Range in North Wales. Here you can indulge yourself with exquisite dining, unwind in our distinctive spa or revel in one of our renowned Medieval Feasts before sinking into a luxurious bed for a sleep worthy of a Prince or Princess.</p>
                                 </li>
                                 <li>
-                                    <h2>Dining></h2>
-                                    <p>Dining will be at the beautiful hotel restaurant <p>Dining will be at the beautiful hotel restaurant. You could be sampling fresh fare from the surrounding grounds, or contemporary takes on regional specialities. </p>
+                                    <h2>Dining</h2>
+                                    <p>Dining will be at the beautiful hotel restaurant. You could be sampling fresh fare from the surrounding grounds, or contemporary takes on regional specialities. </p>
                                 </li>
 
                             </ul>
+                            </div>
                         </article>
                     </li>
                     <li>
                         <input type="radio" name="leg" id="two" />
                         <label for="two">2</label>
                         <article>
+                            <div>
                             <img src="library.jpg" />
                             <h1>Day two</h1>
                             <ul>
@@ -466,12 +530,14 @@
                                     <p>Soughton is a luxury hotel, wedding and event venue. On the border of Cheshire and North Wales, this stunning Georgian country house, approached down a sweeping driveway and surrounded by landscaped gardens has recently been lovingly refurbished. Contempory in feel, yet full of character, charm and warmth, the Hall boasts 14 individually decorated bedrooms, an award winning restaurant and a relaxing alternative to the hustle and bustle of city hotels.</p>
                                 </li>
                             </ul>
+                            </div>
                         </article>
                     </li>
                     <li>
                         <input type="radio" name="leg" id="three" />
                         <label for="three">3</label>
                         <article>
+                            <div>
                             <img src="Pentrehobyn.jpg" />
                             <h1>Day three</h1>
                             <ul>
@@ -488,12 +554,13 @@
                                     <h2>Soughton Hotel</h2>
                                     <p>Soughton is a luxury hotel, wedding and event venue. On the border of Cheshire and North Wales, this stunning Georgian country house, approached down a sweeping driveway and surrounded by landscaped gardens has recently been lovingly refurbished. Contempory in feel, yet full of character, charm and warmth, the Hall boasts 14 individually decorated bedrooms, an award winning restaurant and a relaxing alternative to the hustle and bustle of city hotels.</p>
                                 </li></ul>
+                            </div>
                         </article>
                     </li>
                     <li>
                         <input type="radio" name="leg" id="four" />
                         <label for="four">4</label>
-                        <article>
+                        <article><div>
                             <img src="conwy-castle.jpg" />
                             <h1>Day three</h1>
                             <ul>
@@ -511,7 +578,7 @@
                                     <p>Set on the idyllic Conwy Estuary, the 4 star Quay Hotel and Spa commands awe-inspiring views of the most magical scenery in North Wales and is located within easy reach of Snowdonia National Park, the neighbouring medieval town of Conwy and Victorian Llandudno,</p>
 
                                 </li>
-                            </ul>
+                            </ul></div>
                         </article>
                     </li>
 

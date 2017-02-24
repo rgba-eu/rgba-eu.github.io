@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<title>Totalizer!</title>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Crete+Round');
+        
+        body {
+            background-color: #566266;
+            color: #FFF;
+            font: normal 26px/1 'Crete Round';
+            position: relative;
+            height: 100vh;
+        }
+        ul {
+            display: table-cell;
+            vertical-align: middle;
+            width: 100vw;
+            height: 100vh;
+        }
+        ul,li {
+            list-style: none;
+            text-align: center;
+            margin: 0; 
+            padding: 0;
+        }
+        li {
+            padding: 12px 0;
+        }
+        label, input, button {
+            display: block;
+            margin: 0 auto;
+        }
+        label {
+            padding: 0 0 12px;
+        }
+        input {
+            -webkit-appearance: none;
+            background-color: #FFF;
+            color: #566266;
+            padding: 12px 0;
+            border-radius: 3px;
+            font: normal 50px/1 'Crete Round';
+            text-align: center;
+            border: 0 none;
+            width: 300px;
+        }
+        button {
+            -webkit-appearance: none;
+            border: 0 none;
+            background-color: #f26c4f;
+            border-radius: 5px;
+            color: #FFF;
+            padding: 12px 0;
+            font: normal 40px/1 'Crete Round';
+            width: 300px;
+        }
+        .msg {
+            background-color: #48A415;
+            color: #FFF;
+            padding: 12px 0; 
+            width: 300px;
+            margin: 0 auto;
+            transition: all 0.2s ease-in-out;
+            opacity: 0;
+        }
+        .msg-on .msg {
+            opacity: 1;
+        }
+        
+        
+        
+        
+    </style>
+</head>
+<body class="msg-on">
+    <div id="wrap">
+        <ul>
+            <li>
+                <label for="">Change amount raised</label>
+                <input type="tel" id="a" />
+            </li>
+            <li>
+                <label for="">Change target amount</label>
+                <input type="tel" id="t" />
+            </li>
+            <li>
+                <button id="submit">Submit</button>
+                <p class="msg">Updated successfully!</p>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        
+        // Vars
+        var creds = 'hi@rgba.eu:rgbaGitPa55';
+        var sha;
+        
+        // Define GitHub API AJAX function
+        var gitRequest = function(method,url,callback,data){
+            var request = new XMLHttpRequest();
+            request.open(method,url,true);
+            request.setRequestHeader("Authorization", "Basic " + creds);
+            request.onreadystatechange = function () {
+                if ( this.readyState == 4 && this.status == 200) {
+                    if( callback ){
+                        var response = JSON.parse(this.responseText);
+                        callback(response);
+                    } else {
+                        console.log(this.responseText);
+                        gitRequest('GET',requestUrl,callback);
+                    }
+                } else if( this.readyState == 4 && this.status == 401 ){
+                    loginError(this);
+                }
+            };
+            if(data){
+                request.send(data);
+            } else {
+                request.send();
+            }
+        };
+
+        // Encode/Decode data for transmission
+        var encodeData = function(s){
+            var e = window.btoa(s);
+            return e;
+        };
+
+        var decodeData = function(s){
+            var d = window.atob(s);
+            return d;
+        };
+        
+        // Set Secure Hash Algorithm information
+        var getSha = function(obj){
+            console.log(obj);
+            sha = obj.sha;
+        };
+
+        // Login function
+        creds = encodeData(creds);
+        gitRequest('GET','https://api.github.com/repos/rgba-eu/rbga-eu.github.io/contents/',getSha);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<title>Totalizer!</title>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Crete+Round');
+        
+        body {
+            background-color: #566266;
+            color: #FFF;
+            font: normal 50px/1 'Crete Round';
+            position: relative;
+            height: 100vh;
+        }
+        #wrap {
+            height: 80vh;
+            margin: 10vh 0;
+            width: 100vw;
+            position: relative;
+        }
+        #scale {
+            position: absolute;
+            display: block;
+            width: 10vw;
+            height: 100%;
+            background-color: #FFF;
+            left: 45vw;
+            top: 0;
+            border-radius: 10vw;
+            background-image: linear-gradient(green,orange,red);
+            overflow: hidden;
+        }
+        #total {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 80vh;
+            background-color: #2B3133;
+            left: 0;
+            transition: all 0.4s ease-in-out;
+        }
+        #target-wrap,
+        #zero {
+            position: absolute;
+            width: 100vw;
+            text-align: center;
+            left: 0;
+            margin: 0 0 0 -1vw;
+            padding: 0;
+        }
+        sup {
+            position: relative;
+            top: 20px;
+            left: -5px;
+        }
+        #target-wrap {
+            top: -10vh;
+        }
+        #zero {
+            bottom: -7vh;
+        }
+        #current-wrap {
+            position: absolute;
+            left: 60vw;
+            margin: 0 0 -40px 0;
+            padding: 0;
+            transition: all 0.4s ease-in-out;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h2 id="target-wrap"><strong><sup>&pound;</sup><span id="target">1000</span></strong></h2>
+        <h2 id="current-wrap"><strong><sup>&pound;</sup><span id="current">0</span></strong></h2>
+        <div id="scale"><span id="total"></span></div>
+        <h2 id="zero"><strong><sup>&pound;</sup>0</strong></h2>
+    </div>
+    <script type="text/javascript">
+        
+        var t = document.getElementById('target');
+        var c = document.getElementById('current');
+        var cW = document.getElementById('current-wrap');
+        var s = document.getElementById('scale');
+        var a = document.getElementById('total');
+        
+        
+        function AJAX_JSON_Req(url) {
+            var AJAX_req = new XMLHttpRequest();
+            AJAX_req.open("GET", url, true);
+            AJAX_req.setRequestHeader("Content-type", "application/json");
+            AJAX_req.onreadystatechange = function () {
+                if (AJAX_req.readyState == 4 && AJAX_req.status == 200) {
+                    var response = JSON.parse(AJAX_req.responseText);
+                    useData(response);
+                }
+            }
+            AJAX_req.send();
+        };
+        
+        var useData = function(data){
+            var totalRaised = data.total;
+            var targetAmount = data.target;
+            var percentageOfTotal = totalRaised / targetAmount * 100;
+            t.textContent = targetAmount;
+            c.textContent = totalRaised;
+            cW.style.bottom = percentageOfTotal + '%';
+            a.style.bottom = percentageOfTotal + '%';
+        };
+        
+        AJAX_JSON_Req('data.json');
+        
+        setInterval(function(){
+            AJAX_JSON_Req('data.json');
+        },60000);
+        
+    </script>
+</body>
+</html>

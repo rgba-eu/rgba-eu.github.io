@@ -75,7 +75,7 @@
         
     </style>
 </head>
-<body class="msg-on">
+<body class="">
     <div id="wrap">
         <ul>
             <li>
@@ -96,7 +96,9 @@
         
         // Vars
         var creds = 'hi@rgba.eu:rgbaGitPa55';
-        var sha;
+        //var creds = 'james.nash@moneysupermarket.com:UxGitPa55';
+        var sha,
+            dataSha;
         
         // Define GitHub API AJAX function
         var gitRequest = function(method,url,callback,data){
@@ -134,15 +136,43 @@
             return d;
         };
         
+        var successMsg = function(){
+            document.body.classList.add('msg-on');
+            setTimeout(function(){
+                document.body.classList.remove('msg-on');
+            },4000);
+            gitRequest('GET','https://api.github.com/repos/rgba-eu/rgba-eu.github.io/contents/lee/data.json',getCurrentContents);
+        };
+        
+        // Change values
+        document.getElementById('submit').addEventListener('click',function(){
+            var requestUrl = 'https://api.github.com/repos/rgba-eu/rgba-eu.github.io/contents/lee/data.json';
+            var total = document.getElementById('a').value;
+            var target = document.getElementById('t').value;
+            var content = JSON.stringify({"total": total,"target": target});
+            var changes = encodeData(content);
+            var changeObject = '{"message": "Updated totals","content": "' + changes + '","sha": "' + dataSha + '"}';
+            gitRequest('PUT',requestUrl,successMsg,changeObject);
+        });
+        
+        var getCurrentContents = function(response){
+            console.log(response);
+            dataSha = response.sha;
+        };
         // Set Secure Hash Algorithm information
         var getSha = function(obj){
             console.log(obj);
             sha = obj.sha;
+            gitRequest('GET','https://api.github.com/repos/rgba-eu/rgba-eu.github.io/contents/lee/data.json',getCurrentContents);
         };
 
         // Login function
-        creds = encodeData(creds);
-        gitRequest('GET','https://api.github.com/repos/rgba-eu/rbga-eu.github.io/contents/',getSha);
+        var login = function(){
+            creds = encodeData(creds);
+            gitRequest('GET','https://api.github.com/repos/rgba-eu/rgba-eu.github.io/contents/lee',getSha);    
+        };
+        
+        login();
         
     </script>
 </body>

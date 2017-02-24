@@ -103,8 +103,8 @@
         };
         
         var useData = function(data){
-            var totalRaised = data.total;
-            var targetAmount = data.target;
+            var totalRaised = data.total * 1;
+            var targetAmount = data.target * 1;
             var percentageOfTotal = totalRaised / targetAmount * 100;
             t.textContent = targetAmount;
             c.textContent = totalRaised;
